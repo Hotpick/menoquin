@@ -1,3 +1,5 @@
+@import '../utils/_variables';
+
 .page-wrapper {
     min-width: $min-width;
     width: 100%;
@@ -9,12 +11,17 @@
     justify-content: flex-start;
 }
 
-.wrap {
+.wrap, .wrap-big {
     min-width: $min-width;
     max-width: $max-width;
+    width: 100%;
     padding: 0 12px 0 12px;
     margin: 0 auto;
     position: relative;
+}
+
+.wrap-big {
+    max-width: 1604px;
 }
 
 .page-body {
@@ -31,4 +38,18 @@ p {
     @include font($base-font-size, $base-line-height, $text-color);
     padding: 15px 0 15px 0;
     font-weight: 400;
+}
+
+.btn {
+    display: inline-block;
+    background: $color-main;
+    font-size: 20px;
+    color: $color-white;
+    line-height: 73px;
+    height: 73px;
+    padding: 0 0;
+    border-radius: 16px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 700;
 }

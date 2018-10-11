@@ -12,4 +12,6 @@
     }
 }
 
-@include font-face('Open Sans', 'OpenSans');
+@include font-face('ptsans', 'ptsansregular', 400);
+@include font-face('ptsans', 'ptsansbold', 700);
+@include font-face('comfort', 'comfortaaregular');
