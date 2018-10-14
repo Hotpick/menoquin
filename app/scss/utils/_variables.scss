@@ -1,8 +1,8 @@
 /* reset */
 $min-width: 320px;
-$max-width: 968px;
+$max-width: 1424px;
 $base-bg: #FFF;
-$base-font-size: 16px;
+$base-font-size: 15px;
 $base-line-height: 1;
 $base-font-family: 'ptsans', Arial, sans-serif;
 $custom-font-family: 'ptsans', sans-serif;
@@ -19,6 +19,12 @@ $title-font-family: $custom-font-family;
 // colors
 $color-main: #ed1a92;
 $color-white: #fff;
+$color-blue: #222277;
+$color-pink: #FEBACC;
+
+// fonts
+$comfort: 'comfort', Arial, sans-serif;
+$comfortbold: 'comfortbold', Arial, sans-serif;
 
 $font-size-h1: 36px;
 $line-height-h1: 42px;

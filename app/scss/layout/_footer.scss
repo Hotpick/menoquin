@@ -1,5 +1,24 @@
 .footer {
-    height: 80px;
     width: 100%;
     min-width: $min-width;
+    padding: 50px 0 50px;
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+    &__logo {
+        margin-right: 15px;
+        flex-grow: 0;
+    }
+    &__copyright {
+        font-size: 16px;
+    }
+    &__text {
+        p {
+            font-size: 14px;
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
 }

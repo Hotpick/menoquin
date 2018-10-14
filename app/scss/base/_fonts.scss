@@ -12,6 +12,21 @@
     }
 }
 
+@mixin font-face-second($style-name, $file:$style-name, $weight:normal, $style:normal) {
+    $filepath: "../fonts/" + $file;
+    @font-face {
+        font-family: quote($style-name);
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
+        url($filepath + ".svg") format('svg'),
+        url($filepath + ".woff") format('woff2'),
+        url($filepath + ".ttf") format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
 @include font-face('ptsans', 'ptsansregular', 400);
 @include font-face('ptsans', 'ptsansbold', 700);
-@include font-face('comfort', 'comfortaaregular');
+@include font-face-second('comfort', 'Comfortaa-Regular');
+@include font-face-second('comfortbold', 'Comfortaa-Bold');

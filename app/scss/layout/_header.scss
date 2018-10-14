@@ -1,6 +1,13 @@
 .header {
     width: 100%;
     min-width: $min-width;
+    padding: 34px 0 35px;
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    z-index: 100;
+    background: $color-white;
+    transition: padding linear .3s;
     &__container {
         display: flex;
         justify-content: space-between;
@@ -12,11 +19,60 @@
     &__logo {
         flex-shrink: 0;
     }
+    &.scrolled {
+        padding: 0 5px;
+    }
 }
 
 .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     &__list {
         align-items: center;
         display: flex;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 27px;
+        }
+    }
+    &__link {
+        color: $color-blue;
+        display: block;
+        position: relative;
+        &:after {
+            content: '';
+            background: $color-main;
+            height: 4px;
+            width: 100%;
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            opacity: 0;
+        }
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    margin: 0 24px 0 20px;
+    a, span {
+        padding: 4px 6px 1px;
+        font-size: 16px;;
+        color: $color-blue;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        margin: 0 2px;
+    }
+    span, a:hover {
+        border-color: $color-main;
+        color: $color-main;
     }
 }
