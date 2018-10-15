@@ -5,6 +5,7 @@
     &__left {
         display: flex;
         align-items: center;
+        padding: 7px 0 0;
     }
     &__logo {
         margin-right: 15px;
@@ -15,7 +16,8 @@
     }
     &__text {
         p {
-            font-size: 14px;
+            font-size: 13px;
+            line-height: 1.4;
             &:not(:last-child) {
                 margin-bottom: 8px;
             }

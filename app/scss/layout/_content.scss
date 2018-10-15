@@ -32,16 +32,6 @@
 section {
     position: relative;
 }
-.section-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transform: translateY(-100%);
-    svg {
-        width: 100%;
-    }
-}
 
 .page-title {
     text-align: center;
@@ -142,10 +132,34 @@ ul.list {
 	}
 	&-bot {
 		bottom: 0;
+        transform: translateY(80%);
 	}
 	&-top {
+        transform: translateY(-80%);
 		top: 0;
 	}
+}
+
+.list-check {
+    margin-bottom: 39px;
+    li {
+        position: relative;
+        padding-left: 80px;
+        font-size: 19px;
+        &:not(:last-child) {
+            margin-bottom: 43px;
+        }
+        &:before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: url("../img/check.svg") center center no-repeat;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+        }
+    }
 }
 
 .btn {
