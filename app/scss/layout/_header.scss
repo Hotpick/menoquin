@@ -2,9 +2,9 @@
     width: 100%;
     min-width: $min-width;
     padding: 34px 0 35px;
-    //position: fixed;
-    //top: 0;
-    //left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
     background: $color-white;
     transition: padding linear .3s;
@@ -18,10 +18,58 @@
     }
     &__logo {
         flex-shrink: 0;
+		margin-right: 20px;
     }
     &.scrolled {
         padding: 0 5px;
     }
+    &.resize {
+        padding: 7px 0;
+    }
+	@media(min-width: 1250px) {
+		.onmob {
+			display: none;
+		}
+	}
+    @media(max-width: 1400px) {
+		&__btn {
+			display: none;
+		}
+    }
+    @media(max-width: 1250px) {
+		padding: 7px 0;
+		&__btn {
+			display: inline-block;
+			margin-right: 56px;
+		}
+		&__content {
+			align-items: center;
+		}
+		&__lang.language {
+			display: none;
+		}
+    }
+    @media(max-width: 500px) {
+		padding: 5px 0;
+		&__logo {
+			img {
+				width: 40px;
+			}
+		}
+    }
+}
+
+.mob-menu-trigger {
+	width: 30px;
+	span{
+		display: block;
+		background: $color-blue;
+		height: 3px;
+		border-radius: 1px;
+		&:nth-child(2) {
+			margin: 4px 0;
+		}
+	}
 }
 
 .menu {
@@ -35,6 +83,13 @@
     &__item {
         &:not(:last-child) {
             margin-right: 27px;
+        }
+        &.current {
+            a.menu__link {
+                &:after {
+                    opacity: 1;
+                }
+            }
         }
     }
     &__link {
@@ -57,6 +112,56 @@
             }
         }
     }
+    @media(max-width: 1250px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-main;
+        justify-content: flex-start;
+		transform: translateY(-101%);
+		&.show {
+			transform: translateY(0);
+		}
+        &__top, &__close {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__top {
+            padding: 24px 32px 26px 32px;
+        }
+        &__list {
+            padding: 0 32px 0;
+            margin-bottom: 21px;
+        }
+        &__item {
+            &:not(:last-child) {
+                margin: 0 0 25px;
+            }
+        }
+        &__close {
+            margin-top: -7px;
+        }
+        &__link {
+            color: $color-white;
+            font-size: 16px;
+        }
+        &__close {
+            span {
+                font-size: 12px;
+                color: $color-white;
+                display: block;
+                margin-right: 10px;
+                text-transform: uppercase;
+            }
+        }
+        &__list {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
 }
 
 .language {
@@ -74,5 +179,13 @@
     span, a:hover {
         border-color: $color-main;
         color: $color-main;
+    }
+    &--white {
+        a, span {
+            color: $color-white;
+        }
+        span {
+            border-color: $color-white;
+        }
     }
 }

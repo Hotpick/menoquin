@@ -25,9 +25,81 @@ var diagram = (function(){
     $(document).ready(function () {
         container.find(bar).each(function () {
             var $this = $(this);
-            var height = $this.attr('data-percent');
-            $this.find('.bar').css('height', height);
+            var size = $this.attr('data-percent');
+            if($(window).width() >= 778) {
+                $this.find('.bar').css('height', size);
+            } else {
+                $this.find('.bar').css('width', size);
+            }
         });
     });
 
+})();
+
+var headerSize = (function(){
+    var header = $('.header');
+
+    if($(window).width() >= 1250) {
+        $(window).scroll(function(){
+            if($(document).scrollTop() > 100) {
+                header.addClass('resize');
+            } else {
+                header.removeClass('resize');
+            }
+        });
+    }
+})();
+
+var Menu = (function(){
+    var
+        btn = $('.js-call-menu'),
+        menu = $('.js-menu'),
+        btnClose = $('.js-close-menu'),
+        scrolContainer = menu.find('.menu__list')
+    ;
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        menu.addClass('show');
+    });
+
+    btnClose.on('click', function (e) {
+        e.preventDefault();
+        menu.removeClass('show');
+    });
+
+    scrolContainer.onePageNav({
+        currentClass: 'current',
+        changeHash: false
+    });
+
+    scrolContainer.find('a').on('click',function () {
+        if($(window).width() <= 1250) {
+            menu.removeClass('show');
+        }
+    });
+
+
+})();
+
+var scrollAnimations = (function() {
+    var reveal = ScrollReveal();
+
+    $('.js-reveal').map(function(i, element) {
+        var data = element.dataset;
+
+        reveal.reveal(element, {
+            origin: data.origin,
+            distance: data.distance || 0,
+            duration: Number(data.duration) || 500,
+            delay: Number(data.delay) || 0,
+            rotate: { z: Number(data.rotate) || 0 },
+            opacity: Number(data.opacity) || 0,
+            scale: Number(data.scale) || 1,
+            easing: data.easing || 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+            mobile: Boolean(data.mobile),
+            viewFactor: Number(data.viewfactor) || .75,
+            reset: true
+        })
+    })
 })();

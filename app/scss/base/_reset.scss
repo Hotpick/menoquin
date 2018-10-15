@@ -83,7 +83,6 @@ form {
 
 a {
     color: $link-color;
-    @include transition($default-transition);
     text-decoration: none;
     outline: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);

@@ -2,7 +2,7 @@
 
 .first-screen {
     margin-top: 149px;
-    background: url("../img/first-screen-bg.jpg");
+    background: url("../img/first-screen-bg.jpg") top center no-repeat;
     background-size: cover;
     position: relative;
     padding: 169px 0 78px;
@@ -72,11 +72,78 @@
             width: 100%;
         }
     }
+	@media(max-width: 1250px) {
+		margin-top: 91px;
+		padding: 89px 0 78px;
+		&-list {
+			&__num {
+				padding: 5px 0 0 16px;
+				&:before {
+					left: 0;
+				}
+			}
+		}
+	}
+	@media(max-width: 650px) {
+		padding: 26px 0 0;
+		background-size: 100%;
+		&__title, &__subtitle {
+			padding-left: 36px;
+		}
+		&__title {
+			font-size: 25px;
+			margin-bottom: 9px;
+		}
+		&__subtitle {
+			font-size: 18px;
+			margin-bottom: 0;
+			padding-bottom: 32px;
+		}
+		&-list {
+			background: #fff;
+			flex-direction: column;
+			margin: 0 -16px;
+			padding: 25px 16px 25px;
+			&__item {
+				display: flex;
+				&:not(:last-child) {
+					margin-right: 0;
+					margin-bottom: 17px;
+				}
+			}
+			&__text {
+				color: #000;
+				font-size: 15px;
+				padding: 5px 0 0 17px;
+			}
+			&__num {
+				padding: 28px 0 0 0;
+				text-align: center;
+				width: 78px;
+				height: 78px;
+				flex-shrink: 0;
+				span {
+					line-height: 1;
+					font-size: 24px;
+				}
+				&:before {
+					width: 78px;
+					height: 78px;
+				}
+			}
+		}
+	}
+	@media(max-width: 500px) {
+		margin-top: 52px;
+	}
 }
 
 .symptoms {
-    padding: 100px 0 0;
+    padding: 100px 0 50px;
     background: $color-pink;
+	.s-bot {
+		transform: translateY(34%);
+	}
     &__text {
         max-width: 400px;
         p {
@@ -87,10 +154,37 @@
     }
     &__title {
         color: $color-white;
-        font-family: $comfortbold;
         line-height: 1.2;
         margin-bottom: 20px;
     }
+	@media(max-width: 1200px) {
+		&__text {
+			max-width: none;
+			margin-bottom: 50px;
+		}
+	}
+	@media(max-width: 778px) {
+		padding: 30px 0 50px;
+		&__text {
+			max-width: none;
+			margin-bottom: 100px;
+		}
+	}
+	@media(max-width: 500px) {
+		padding: 28px 0 50px;
+		&__title {
+			font-size: 25px;
+			line-height: 1.1;
+			margin-bottom: 13px;
+		}
+		&__text {
+			margin-bottom: 78px;
+			p {
+				line-height: 1.7;
+				font-size: 14px;
+			}
+		}
+	}
 }
 
 .diagram {
@@ -100,10 +194,16 @@
         top: -20px;
         left: 0;
         width: 100%;
+		padding: 0 16px;
+		img {
+			width: 100%;
+		}
     }
     &__list {
         display: flex;
         margin: 0 -14px;
+		position: relative;
+		z-index: 2;
     }
     &__item {
         height: 358px;
@@ -124,6 +224,7 @@
             width: 100%;
             bottom: 0;
             left: 0;
+            height: 0;
             position: absolute;
         }
         &:after {
@@ -145,18 +246,58 @@
         line-height: 1.1;
         color: $color-white;
         width: 100%;
+		font-weight: 700;
     }
+	@media(max-width: 1250px) {
+		&__list {
+			margin: 0;
+		}
+	}
+	@media(max-width: 778px) {
+		&__list {
+			flex-direction: column;
+		}
+		&__item {
+			height: auto;
+			padding: 0;
+			width: 100%;
+			flex-direction: row-reverse;
+			align-items: center;
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+		&__bar {
+			height: 35px;
+			margin-bottom: 0;
+			&:after {
+				font-size: 19px;
+				bottom: 6px;
+				left: 8px;
+				text-align: left;
+			}
+			.bar {
+				height: 100%;
+			}
+		}
+		&__top {
+			top: -55px;
+			padding: 0 9px;
+		}
+		&__title {
+			font-size: 12px;
+			height: auto;
+			line-height: 1;
+			flex-shrink: 0;
+			width: 168px;
+		}
+	}
 }
 
 .product {
-    padding: 50px 0 50px;
-    &__content {
-        display: flex;
-    }
-    &__col {
-        flex-basis: 50%;
-    }
+    padding: 121px 0 192px;
     &__img-wrap {
+		padding: 50px 0 0;
         position: relative;
     }
     &__little-img {
@@ -164,18 +305,23 @@
         bottom: 0;
         left: 0;
     }
+	&__title {
+		line-height: 1.2;
+		margin-bottom: 18px;
+	}
     &__text {
-        margin-bottom: 30px;
+        margin-bottom: 17px;
     }
     &__list {
         margin-bottom: 30px;
         li {
+			font-size: 18px;
             position: relative;
             &:not(:last-child) {
-                margin-bottom: 10px;
+                margin-bottom: 14px;
             }
             &:not(:first-child) {
-                padding-left: 30px;
+                padding-left: 19px;
                 &:before {
                     content: '';
                     width: 12px;
@@ -183,8 +329,8 @@
                     border-radius: 50%;
                     border: 3px solid $color-main;
                     position: absolute;
-                    top: 0;
-                    left: 0;
+					top: 3px;
+					left: -2px;
                 }
             }
         }
@@ -192,9 +338,27 @@
 }
 
 .composition {
+	background: #F9F9F9;
+	padding: 0 0 45px;
+	.s-top {
+		transform: translateY(-80%);
+	}
     &__img {
         text-align: center;
     }
+	&__title {
+		margin-bottom: 63px;
+	}
+	&__text {
+		h3 {
+			font-size: 18px;
+			line-height: 1.4;
+			margin-bottom: 10px;
+		}
+		h4 {
+			margin-bottom: 14px;
+		}
+	}
     &__top {
         position: relative;
         margin: 0 auto;
@@ -202,6 +366,7 @@
         height: 170px;
         border: 2px solid $color-pink;
         border-radius: 50%;
+		margin-bottom: 63px;
     }
     &__item {
         position: relative;
@@ -209,8 +374,8 @@
             &:before {
                 content: '';
                 position: absolute;
-                top: 50px;
-                right: 0;
+				top: 66px;
+				right: -19px;
                 width: 44px;
                 height: 44px;
                 background: url("../img/plus.svg") center center no-repeat;
@@ -228,7 +393,7 @@
         height: 60px;
         position: absolute;
         left: 50%;
-        bottom: -30px;
+        bottom: -23px;
         transform: translateX(-50%);
         line-height: 60px;
     }
@@ -245,17 +410,29 @@
 }
 
 .description {
-    padding: 50px 0 50px;
+	background: #F9F9F9;
+    padding: 45px 0 180px;
     &__item {
+		p {
+			font-size: 18px;
+			max-width: 610px;
+			line-height: 1.4;
+		}
         &:first-child {
-            padding-top: 110px;
+            padding-top: 124px;
         }
     }
+	&__title {
+		margin-bottom: 43px;
+	}
 }
 
 .advantages {
-    background: $color-pink;
+    background: #F4A4BA;
     padding: 50px 0 50px;
+	.s-top {
+		transform: translateY(-80%);
+	}
     &__item {
         color: #fff;
     }

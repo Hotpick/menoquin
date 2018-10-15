@@ -4,22 +4,41 @@
             <img src="img/logo.svg" alt="logo">
         </div>
         <div class="header__content">
-            <div class="menu">
+            <div class="menu js-menu">
+                <div class="menu__top onmob">
+                    <div class="menu__logo">
+                        <img src="img/logo-white.svg" alt="logo">
+                    </div>
+                    <a href="#" class="menu__close js-close-menu">
+                        <span>закрыть</span>
+                        <img src="img/close.svg" alt="close">
+                    </a>
+
+                </div>
                 <ul class="menu__list">
-                    <li class="menu__item"><a href="#" class="menu__link">Климактерический синдром</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Действия препарата</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Состав</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Преимущества</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Эффективность</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Полезная информация</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
+                    <li class="menu__item"><a href="#symptoms" class="menu__link">Климактерический синдром</a></li>
+                    <li class="menu__item"><a href="#product" class="menu__link">Действия препарата</a></li>
+                    <li class="menu__item"><a href="#composition" class="menu__link">Состав</a></li>
+                    <li class="menu__item"><a href="#description" class="menu__link">Эффективность</a></li>
+                    <li class="menu__item"><a href="#advantages" class="menu__link">Преимущества</a></li>
+                    <li class="menu__item"><a href="#information" class="menu__link">Полезная информация</a></li>
+                    <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
                 </ul>
+                <div class="menu__lang language language--white onmob">
+                    <span>Ру</span>
+                    <a href="#">Укр</a>
+                </div>
             </div>
-            <div class="language">
+            <div class="header__lang language">
                 <span>Ру</span>
                 <a href="#">Укр</a>
             </div>
             <a href="#" class="btn header__btn"> Где купить?</a>
+            <a href="#" class="mob-menu-trigger js-call-menu onmob">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
         </div>
     </div>
 </header>
