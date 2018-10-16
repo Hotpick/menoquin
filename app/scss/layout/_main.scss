@@ -204,6 +204,13 @@
         margin: 0 -14px;
 		position: relative;
 		z-index: 2;
+        &.hide {
+            .bar {
+                @media(min-width: 778px) {
+                    height: 0 !important;
+                }
+            }
+        }
     }
     &__item {
         height: 358px;
@@ -226,6 +233,7 @@
             left: 0;
             height: 0;
             position: absolute;
+            transition: height ease 1s;
         }
         &:after {
             content: attr(data-percent);

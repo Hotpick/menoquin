@@ -34,6 +34,17 @@ var diagram = (function(){
         });
     });
 
+    $(window).on('scroll', function(){
+       var $this = $(this);
+
+        if($(window).width() >= 778) {
+           if($this.scrollTop() + 250 >= container.offset().top) {
+               container.removeClass('hide');
+           }
+        }
+
+    });
+
 })();
 
 var headerSize = (function(){

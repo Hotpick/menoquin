@@ -190,9 +190,15 @@ ul.list {
     text-align: center;
     white-space: nowrap;
     font-weight: 700;
+    transition: transform ease .3s;
 	&--blue {
 		background: #222277;
 	}
+    &:hover {
+        @media(min-width: 992px) {
+            transform: translateY(5px);
+        }
+    }
 }
 
 .quote {
