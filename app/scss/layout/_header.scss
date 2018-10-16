@@ -7,7 +7,7 @@
     left: 0;
     z-index: 100;
     background: $color-white;
-    transition: padding linear .3s;
+    transition: padding ease .4s;
     &__container {
         display: flex;
         justify-content: space-between;
@@ -55,6 +55,11 @@
 			img {
 				width: 40px;
 			}
+		}
+		.header__btn {
+			font-size: 14px;
+			padding: 12px 17px 10px;
+			border-radius: 8px;
 		}
     }
 }

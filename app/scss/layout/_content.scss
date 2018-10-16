@@ -55,6 +55,9 @@ ul, ol {
 h2 {
     font-size: 50px;
     font-family: $comfortbold;
+	@media(max-width: 500px) {
+		font-size: 24px;
+	}
 }
 
 h3 {
@@ -132,10 +135,10 @@ ul.list {
 	}
 	&-bot {
 		bottom: 0;
-        transform: translateY(80%);
+        transform: translateY(69%);
 	}
 	&-top {
-        transform: translateY(-80%);
+        transform: translateY(-69%);
 		top: 0;
 	}
 }
@@ -160,6 +163,21 @@ ul.list {
             left: 0;
         }
     }
+	@media(max-width: 500px) {
+		margin-bottom: 31px;
+		li {
+			padding-left: 38px;
+			font-size: 17px;
+			&:before {
+				width: 25px;
+				height: 25px;
+				background-size: 25px 25px;
+			}
+			&:not(:last-child) {
+				margin-bottom: 23px;
+			}
+		}
+	}
 }
 
 .btn {
@@ -172,10 +190,8 @@ ul.list {
     text-align: center;
     white-space: nowrap;
     font-weight: 700;
-	@media(max-width: 500px) {
-		font-size: 14px;
-		padding: 12px 17px 10px;
-		border-radius: 8px;
+	&--blue {
+		background: #222277;
 	}
 }
 
@@ -194,4 +210,9 @@ ul.list {
         top: 0;
         left: 0;
     }
+	@media(max-width: 500px) {
+		font-size: 18px;
+		line-height: 1.6;
+		padding-top: 111px;
+	}
 }
