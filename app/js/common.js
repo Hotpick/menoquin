@@ -7,11 +7,11 @@ var showMore = (function(){
        var $this = $(this);
 
        e.preventDefault();
-       if($this.hasClass('active')) {
-           return false;
+
+       if($this.parent().hasClass('active')) {
+           $this.parent().removeClass('active');
        } else {
-           btn.parent().removeClass('active');
-           $this.parent().addClass('active')
+           $this.parent().addClass('active');
        }
     });
 })();
@@ -47,6 +47,23 @@ var diagram = (function(){
 
 })();
 
+var goTo = (function(){
+
+    var
+        link = $('.js-go-link');
+    ;
+
+    link.click(function(e){
+        e.preventDefault();
+        var
+            href = $(this).attr('href'),
+            target = $(href).offset().top - 100
+        ;
+        $('body,html').animate({scrollTop:target},500,'swing');
+    });
+
+})();
+
 var headerSize = (function(){
     var header = $('.header');
 
@@ -61,7 +78,7 @@ var headerSize = (function(){
     }
 })();
 
-var Menu = (function(){
+var menu = (function(){
     var
         btn = $('.js-call-menu'),
         menu = $('.js-menu'),

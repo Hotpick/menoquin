@@ -323,6 +323,7 @@
 	&__title {
 		line-height: 1.2;
 		margin-bottom: 18px;
+		color: #222277;
 	}
     &__text {
         margin-bottom: 17px;
@@ -411,6 +412,7 @@
     }
 	&__title {
 		margin-bottom: 63px;
+		color: #222277;
 	}
 	&__text {
 		h3 {
@@ -603,6 +605,8 @@
     }
     &__container {
         margin-bottom: -22px;
+		position: relative;
+		z-index: 2;
     }
 	&__img {
 		padding: 71px 0 71px 98px;
@@ -659,6 +663,7 @@
     margin-bottom: 56px;
     &__title {
         margin-bottom: 42px;
+		color: #222277;
     }
 }
 
@@ -749,6 +754,7 @@
 		}
 		&__shape {
 			flex-shrink: 0;
+			margin-right: 4px;
 		}
 	}
 }
@@ -757,6 +763,7 @@
     padding: 100px 0 173px;
     &__title {
         margin-bottom: 51px;
+		color: #222277;
     }
 	@media(max-width: 992px) {
 		padding: 30px 0 73px;
@@ -800,6 +807,7 @@
         font-family: $comfortbold;
         font-size: 20px;
         margin-right: 6px;
+		color: #222277;
     }
 	@media(max-width: 992px) {
 		margin-bottom: 30px;
